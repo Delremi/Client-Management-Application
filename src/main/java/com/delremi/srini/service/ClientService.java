@@ -42,8 +42,9 @@ public class ClientService {
         return client.toDisplayDto();
     }
 
-    public List<ClientDisplayDto> getClients() {
-        List<Client> clients = clientRepository.findAllByCreatedBy(AuthUtils.getAuthenticatedUserId());
+    public List<ClientDisplayDto> getClients() throws EntityNotFoundException {
+        User user = userService.getUser(AuthUtils.getAuthenticatedUserId());
+        List<Client> clients = clientRepository.findAllByCreatedBy(user);
         return clients.stream().map(Client::toDisplayDto).collect(Collectors.toList());
     }
 }

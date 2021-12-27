@@ -18,7 +18,7 @@ public class ClientController {
     private ClientService clientService;
 
     @GetMapping
-    public List<ClientDisplayDto> getClients() {
+    public List<ClientDisplayDto> getClients() throws EntityNotFoundException {
         return clientService.getClients();
     }
 
