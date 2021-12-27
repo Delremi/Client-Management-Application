@@ -1,5 +1,6 @@
 package com.delremi.srini.service;
 
+import com.delremi.srini.exception.EntityNotFoundException;
 import com.delremi.srini.model.User;
 import com.delremi.srini.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,19 @@ public class UserService {
         return userRepository.save(new User(null, username, passwordEncoder.encode(password)));
     }
 
-    public User getUser(String username) {
-        return userRepository.findByUsername(username);
+    public User getUser(String username) throws EntityNotFoundException {
+        User user = userRepository.findByUsername(username);
+        if (user == null) {
+            throw new EntityNotFoundException(User.class, username);
+        }
+        return user;
+    }
+
+    public User getUser(int id) throws EntityNotFoundException {
+        User user = userRepository.findById(id);
+        if (user == null) {
+            throw new EntityNotFoundException(User.class, id);
+        }
+        return user;
     }
 }

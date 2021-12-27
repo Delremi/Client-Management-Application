@@ -16,8 +16,9 @@ public class SriniUserDetails implements UserDetails {
     private final boolean isAccountNonLocked;
     private final boolean isCredentialsNonExpired;
     private final boolean isEnabled;
+    private final Integer userId;
 
-    public SriniUserDetails(String username, String password) {
+    public SriniUserDetails(String username, String password, int userId) {
         this.authorities = List.of(new SimpleGrantedAuthority("ROLE_USER"));
         this.username = username;
         this.password = password;
@@ -25,6 +26,7 @@ public class SriniUserDetails implements UserDetails {
         this.isAccountNonLocked = true;
         this.isCredentialsNonExpired = true;
         this.isEnabled = true;
+        this.userId = userId;
     }
 
     @Override
@@ -60,5 +62,9 @@ public class SriniUserDetails implements UserDetails {
     @Override
     public boolean isEnabled() {
         return isEnabled;
+    }
+
+    public int getUserId() {
+        return userId;
     }
 }

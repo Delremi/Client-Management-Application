@@ -21,9 +21,10 @@ public class SriniApplication {
     @Bean
     CommandLineRunner run(UserService userService) {
         return args -> {
-            userService.saveUser("first", "first");
-            userService.saveUser("second", "second");
-            userService.saveUser("third", "third");
+            userService.saveUser("del", "del");
+            userService.saveUser("1", "1");
+            userService.saveUser("2", "2");
+            userService.saveUser("3", "3");
         };
     }
 
