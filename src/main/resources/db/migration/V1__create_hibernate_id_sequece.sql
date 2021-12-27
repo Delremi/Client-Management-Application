@@ -1,1 +1,1 @@
-CREATE SEQUENCE HIBERNATE_SEQUENCE START WITH 0 INCREMENT BY 1;
+create sequence hibernate_sequence start with 0 increment by 1;

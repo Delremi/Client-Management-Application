@@ -1,7 +1,7 @@
 insert into Country values
-    (0, 'Estonia'),
-    (1, 'Latvia'),
-    (2, 'Lithuania'),
-    (3, 'Finland'),
-    (4, 'Sweden')
+    (hibernate_sequence.nextval, 'Estonia'),
+    (hibernate_sequence.nextval, 'Latvia'),
+    (hibernate_sequence.nextval, 'Lithuania'),
+    (hibernate_sequence.nextval, 'Finland'),
+    (hibernate_sequence.nextval, 'Sweden')
 ;
