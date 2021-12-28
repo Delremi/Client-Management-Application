@@ -1,7 +1,7 @@
-package com.delremi.srini.security;
+package com.delremi.security;
 
-import com.delremi.srini.model.User;
-import com.delremi.srini.repository.UserRepository;
+import com.delremi.model.User;
+import com.delremi.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
-public class SriniUserDetailsService implements UserDetailsService {
+public class CustomUserDetailsService implements UserDetailsService {
 
     @Autowired
     private UserRepository userRepository;
@@ -20,6 +20,6 @@ public class SriniUserDetailsService implements UserDetailsService {
         if (user == null) {
             throw new UsernameNotFoundException(String.format("User '%s' not found in the database", username));
         }
-        return new SriniUserDetails(user.getUsername(), user.getPassword(), user.getId());
+        return new CustomUserDetails(user.getUsername(), user.getPassword(), user.getId());
     }
 }

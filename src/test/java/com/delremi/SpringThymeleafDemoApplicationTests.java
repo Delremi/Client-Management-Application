@@ -1,10 +1,10 @@
-package com.delremi.srini;
+package com.delremi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SriniApplicationTests {
+class SpringThymeleafDemoApplicationTests {
 
 	@Test
 	void contextLoads() {

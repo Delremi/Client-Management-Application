@@ -1,8 +1,8 @@
-package com.delremi.srini.service;
+package com.delremi.service;
 
-import com.delremi.srini.exception.EntityNotFoundException;
-import com.delremi.srini.model.Country;
-import com.delremi.srini.repository.CountryRepository;
+import com.delremi.model.Country;
+import com.delremi.exception.EntityNotFoundException;
+import com.delremi.repository.CountryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

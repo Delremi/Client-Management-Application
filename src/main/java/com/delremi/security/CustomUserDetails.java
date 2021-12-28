@@ -1,4 +1,4 @@
-package com.delremi.srini.security;
+package com.delremi.security;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.List;
 
-public class SriniUserDetails implements UserDetails {
+public class CustomUserDetails implements UserDetails {
 
     private final List<? extends GrantedAuthority> authorities;
     private final String username;
@@ -18,7 +18,7 @@ public class SriniUserDetails implements UserDetails {
     private final boolean isEnabled;
     private final Integer userId;
 
-    public SriniUserDetails(String username, String password, int userId) {
+    public CustomUserDetails(String username, String password, int userId) {
         this.authorities = List.of(new SimpleGrantedAuthority("ROLE_USER"));
         this.username = username;
         this.password = password;

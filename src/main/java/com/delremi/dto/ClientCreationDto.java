@@ -1,6 +1,6 @@
-package com.delremi.srini.dto;
+package com.delremi.dto;
 
-import com.delremi.srini.model.Country;
+import com.delremi.model.Country;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

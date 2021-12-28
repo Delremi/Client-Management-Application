@@ -1,10 +1,9 @@
-package com.delremi.srini;
+package com.delremi;
 
-import com.delremi.srini.dto.ClientCreationDto;
-import com.delremi.srini.security.SriniUserDetailsService;
-import com.delremi.srini.service.ClientService;
-import com.delremi.srini.service.CountryService;
-import com.delremi.srini.service.UserService;
+import com.delremi.security.CustomUserDetailsService;
+import com.delremi.service.ClientService;
+import com.delremi.service.CountryService;
+import com.delremi.service.UserService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,10 +14,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SpringBootApplication
-public class SriniApplication {
+public class SpringThymeleafDemoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SriniApplication.class, args);
+        SpringApplication.run(SpringThymeleafDemoApplication.class, args);
     }
 
     @Bean
@@ -38,7 +37,7 @@ public class SriniApplication {
 
     @Bean
     protected UserDetailsService userDetailsService() {
-        return new SriniUserDetailsService();
+        return new CustomUserDetailsService();
     }
 
     @Bean

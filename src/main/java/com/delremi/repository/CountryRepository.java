@@ -1,6 +1,6 @@
-package com.delremi.srini.repository;
+package com.delremi.repository;
 
-import com.delremi.srini.model.Country;
+import com.delremi.model.Country;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CountryRepository extends JpaRepository<Country, Integer> {

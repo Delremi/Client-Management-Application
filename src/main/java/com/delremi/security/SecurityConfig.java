@@ -1,4 +1,4 @@
-package com.delremi.srini.security;
+package com.delremi.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;

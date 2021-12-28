@@ -1,11 +1,11 @@
-package com.delremi.srini.security;
+package com.delremi.security;
 
 import org.springframework.security.core.context.SecurityContextHolder;
 
 public class AuthUtils {
 
     public static int getAuthenticatedUserId() {
-        SriniUserDetails userDetails = (SriniUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        CustomUserDetails userDetails = (CustomUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         return userDetails.getUserId();
     }
 }

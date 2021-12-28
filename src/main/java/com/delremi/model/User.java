@@ -1,4 +1,4 @@
-package com.delremi.srini.model;
+package com.delremi.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

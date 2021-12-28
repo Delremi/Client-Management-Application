@@ -1,10 +1,10 @@
-package com.delremi.srini.controller;
+package com.delremi.controller;
 
-import com.delremi.srini.dto.ClientCreationDto;
-import com.delremi.srini.exception.EntityNotFoundException;
-import com.delremi.srini.model.Client;
-import com.delremi.srini.service.ClientService;
-import com.delremi.srini.service.CountryService;
+import com.delremi.service.ClientService;
+import com.delremi.dto.ClientCreationDto;
+import com.delremi.exception.EntityNotFoundException;
+import com.delremi.model.Client;
+import com.delremi.service.CountryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

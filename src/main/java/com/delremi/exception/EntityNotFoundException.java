@@ -1,4 +1,4 @@
-package com.delremi.srini.exception;
+package com.delremi.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
