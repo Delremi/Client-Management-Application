@@ -9,5 +9,7 @@ import java.util.List;
 
 @Repository
 public interface ClientRepository extends JpaRepository<Client, Integer> {
-    List<Client> findAllByCreatedBy(User user);
+    List<Client> findAllByCreatedBy(User createdBy);
+
+    Client findByIdAndCreatedBy(int id, User createdBy);
 }

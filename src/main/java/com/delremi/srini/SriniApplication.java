@@ -1,6 +1,9 @@
 package com.delremi.srini;
 
+import com.delremi.srini.dto.ClientCreationDto;
 import com.delremi.srini.security.SriniUserDetailsService;
+import com.delremi.srini.service.ClientService;
+import com.delremi.srini.service.CountryService;
 import com.delremi.srini.service.UserService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -19,7 +22,7 @@ public class SriniApplication {
     }
 
     @Bean
-    CommandLineRunner run(UserService userService) {
+    CommandLineRunner run(UserService userService, ClientService clientService, CountryService countryService) {
         return args -> {
             userService.saveUser("del", "del");
             userService.saveUser("1", "1");

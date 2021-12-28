@@ -1,12 +1,17 @@
 package com.delremi.srini.model;
 
-import com.delremi.srini.dto.ClientDisplayDto;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
 @Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Client {
 
     @Id
@@ -34,8 +39,4 @@ public class Client {
     @ManyToOne
     @JoinColumn(nullable = false)
     private User createdBy;
-
-    public ClientDisplayDto toDisplayDto() {
-        return new ClientDisplayDto(id, firstName, lastName, username, email, address, country.getId());
-    }
 }

@@ -1,28 +1,34 @@
 package com.delremi.srini.dto;
 
+import com.delremi.srini.model.Country;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class ClientCreationDto {
 
-    @NotNull
+    @NotBlank
     private String firstName;
 
-    @NotNull
+    @NotBlank
     private String lastName;
 
-    @NotNull
+    @NotBlank
     private String username;
 
     private String email;
 
-    @NotNull
+    @NotBlank
     private String address;
 
     @NotNull
-    private int countryId;
+    private Country country;
 }

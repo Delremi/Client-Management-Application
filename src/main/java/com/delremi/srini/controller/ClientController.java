@@ -1,29 +1,73 @@
 package com.delremi.srini.controller;
 
 import com.delremi.srini.dto.ClientCreationDto;
-import com.delremi.srini.dto.ClientDisplayDto;
 import com.delremi.srini.exception.EntityNotFoundException;
+import com.delremi.srini.model.Client;
 import com.delremi.srini.service.ClientService;
+import com.delremi.srini.service.CountryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.validation.Valid;
-import java.util.List;
 
-@RestController
-@RequestMapping("/api/v1/client")
+@Controller
 public class ClientController {
 
     @Autowired
     private ClientService clientService;
 
+    @Autowired
+    private CountryService countryService;
+
     @GetMapping
-    public List<ClientDisplayDto> getClients() throws EntityNotFoundException {
-        return clientService.getClients();
+    public String showClientList(Model model) throws EntityNotFoundException {
+        model.addAttribute("clients", clientService.getClients());
+        return "clients";
     }
 
-    @PostMapping
-    public ClientDisplayDto saveClient(@RequestBody @Valid ClientCreationDto clientCreationDto) throws EntityNotFoundException {
-        return clientService.saveClient(clientCreationDto);
+    @GetMapping("/add")
+    public String showAddForm(Model model, ClientCreationDto clientCreationDto) {
+        model.addAttribute("countries", countryService.getCountries());
+        return "add-client";
+    }
+
+    @PostMapping("/add")
+    public String addClient(@Valid ClientCreationDto clientCreationDto, BindingResult bindingResult, Model model) throws EntityNotFoundException {
+        if (bindingResult.hasErrors()) {
+            return showAddForm(model, clientCreationDto);
+        }
+        clientService.saveClient(clientCreationDto);
+        return "redirect:/";
+    }
+
+    @GetMapping("/edit/{id}")
+    public String showEditForm(@PathVariable int id, Model model, ClientCreationDto clientCreationDto) throws EntityNotFoundException {
+        Client client = clientService.getClient(id);
+        clientCreationDto = new ClientCreationDto(client.getFirstName(), client.getLastName(), client.getUsername(), client.getEmail(), client.getAddress(), client.getCountry());
+        model.addAttribute("clientCreationDto", clientCreationDto);
+        model.addAttribute("clientId", id);
+        model.addAttribute("countries", countryService.getCountries());
+        return "edit-client";
+    }
+
+    private String reloadEditForm(int id, Model model, ClientCreationDto clientCreationDto) {
+        model.addAttribute("clientCreationDto", clientCreationDto);
+        model.addAttribute("clientId", id);
+        model.addAttribute("countries", countryService.getCountries());
+        return "edit-client";
+    }
+
+    @PostMapping("/edit/{id}")
+    public String updateClient(@PathVariable int id, @Valid ClientCreationDto clientCreationDto, BindingResult bindingResult, Model model) throws EntityNotFoundException {
+        if (bindingResult.hasErrors()) {
+            return reloadEditForm(id, model, clientCreationDto);
+        }
+        clientService.updateClient(id, clientCreationDto);
+        return "redirect:/";
     }
 }

@@ -6,6 +6,8 @@ import com.delremi.srini.repository.CountryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CountryService {
 
@@ -18,5 +20,9 @@ public class CountryService {
             throw new EntityNotFoundException(Country.class, id);
         }
         return country;
+    }
+
+    public List<Country> getCountries() {
+        return countryRepository.findAll();
     }
 }
