@@ -20,7 +20,7 @@
 
     <div class="row">
         <div class="col-md-12 order-md-1">
-            <form class="needs-validation" action="#" th:action="@{/edit/{id}(id=${clientId})}" th:object="${clientCreationDto}" method="post">
+            <form class="needs-validation" novalidate action="#" th:action="@{/edit/{id}(id=${clientId})}" th:object="${clientCreationDto}" method="post">
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="firstName">First name</label>
