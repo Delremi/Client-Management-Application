@@ -20,7 +20,7 @@
 
     <div class="row">
         <a th:href="@{/add}" class="btn btn-primary">Add client</a>
-        <table class="table">
+        <table th:if="${clients.size()>0}" class="table">
             <thead>
             <tr>
                 <th scope="col">#</th>
@@ -31,7 +31,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:if="${clients.size()>0}" th:each="i : ${#numbers.sequence(0, clients.size()-1)}">
+            <tr th:each="i : ${#numbers.sequence(0, clients.size()-1)}">
                 <th scope="row" th:text="${i+1}"></th>
                 <td th:text="${clients.get(i).getFirstName()}"></td>
                 <td th:text="${clients.get(i).getLastName()}"></td>

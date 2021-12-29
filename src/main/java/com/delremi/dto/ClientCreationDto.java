@@ -15,20 +15,20 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 public class ClientCreationDto {
 
-    @NotBlank
+    @NotBlank(message = "First name must not be empty!")
     private String firstName;
 
-    @NotBlank
+    @NotBlank(message = "Last name must not be empty!")
     private String lastName;
 
-    @NotBlank
+    @NotBlank(message = "Username must not be empty!")
     private String username;
 
     private String email;
 
-    @NotBlank
+    @NotBlank(message = "Address must not be empty!")
     private String address;
 
-    @NotNull
+    @NotNull(message = "Country must be selected!")
     private Country country;
 }
