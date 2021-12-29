@@ -16,6 +16,7 @@
 <div class="container">
     <div class="py-5 text-center">
         <h2>Clients</h2>
+        <a style="float: right" th:href="@{/logout}" class="btn btn-primary">Log out</a>
     </div>
 
     <div class="row">
@@ -36,7 +37,7 @@
                 <td th:text="${clients.get(i).getFirstName()}"></td>
                 <td th:text="${clients.get(i).getLastName()}"></td>
                 <td th:text="${clients.get(i).getUsername()}"></td>
-                <td><a th:href="@{/edit/{id}(id=${clients.get(i).getId()})}" class="btn btn-primary">Edit client</a></td>
+                <td><a th:href="@{/edit/{id}(id=${clients.get(i).getId()})}" style="float: right" class="btn btn-primary">Edit client</a></td>
             </tr>
             </tbody>
         </table>
