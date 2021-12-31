@@ -21,12 +21,11 @@ public class SpringThymeleafDemoApplication {
     }
 
     @Bean
-    CommandLineRunner run(UserService userService, ClientService clientService, CountryService countryService) {
+    CommandLineRunner run(UserService userService) {
         return args -> {
-            userService.saveUser("del", "del");
-            userService.saveUser("1", "1");
-            userService.saveUser("2", "2");
-            userService.saveUser("3", "3");
+            userService.saveUser("user1", "pass");
+            userService.saveUser("user2", "pass");
+            userService.saveUser("user3", "pass");
         };
     }
 
