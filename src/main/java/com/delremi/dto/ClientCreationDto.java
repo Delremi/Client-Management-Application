@@ -13,23 +13,23 @@ import javax.validation.constraints.Pattern;
 @AllArgsConstructor
 public class ClientCreationDto {
 
-    @NotBlank(message = "First name must not be empty!")
-    @Pattern(regexp = "^$|^[A-Za-züõöäÜÕÖÄ]+$", message = "First name must contain only characters!")
+    @NotBlank(message = "First name must not be empty")
+    @Pattern(regexp = "^$|^[A-Za-züõöäÜÕÖÄ]+$", message = "First name must contain only characters")
     private String firstName;
 
-    @NotBlank(message = "Last name must not be empty!")
-    @Pattern(regexp = "^$|^[A-Za-züõöäÜÕÖÄ]+$", message = "Last name must contain only characters!")
+    @NotBlank(message = "Last name must not be empty")
+    @Pattern(regexp = "^$|^[A-Za-züõöäÜÕÖÄ]+$", message = "Last name must contain only characters")
     private String lastName;
 
-    @NotBlank(message = "Username must not be empty!")
+    @NotBlank(message = "Username must not be empty")
     private String username;
 
-    @Email(message = "Invalid email address format!")
+    @Email(message = "Invalid email address format")
     private String email;
 
-    @NotBlank(message = "Address must not be empty!")
+    @NotBlank(message = "Address must not be empty")
     private String address;
 
-    @NotNull(message = "Country must be selected!")
+    @NotNull(message = "Country must be selected")
     private Country country;
 }
