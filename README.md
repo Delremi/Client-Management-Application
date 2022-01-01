@@ -55,4 +55,4 @@ http://localhost:8080/logout
 
 ## Contact
 
-**Del Remi Liik** - 53866399 - liik.delremi@gmail.com
+**Del Remi Liik** | +37253866399 | liik.delremi@gmail.com
