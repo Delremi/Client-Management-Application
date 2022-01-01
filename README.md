@@ -9,9 +9,9 @@ This is a fullstack Java application for managing multiple users' clients.
 
 ## Running The Application
 
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow these steps.
 
-### Installation
+### From source code
 
 1. Clone the repo
    ```sh
@@ -21,7 +21,18 @@ To get a local copy up and running follow these simple example steps.
    ```
    SpringThymeleafDemoApplication
    ```
-<!-- USAGE EXAMPLES -->
+   
+### From .jar
+
+1. Download latest application .jar file from
+    ```
+    https://github.com/Delremi/spring-thymeleaf-demo-application/releases
+    ``` 
+2. Run the following command-line command
+    ```
+    java -jar path-to-application-jar
+    ``` 
+
 ## Usage
 
 By default the application runs on port 8080 and can be accessed in a web browser at
