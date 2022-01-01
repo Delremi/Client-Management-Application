@@ -1,8 +1,6 @@
 package com.delremi;
 
 import com.delremi.security.CustomUserDetailsService;
-import com.delremi.service.ClientService;
-import com.delremi.service.CountryService;
 import com.delremi.service.UserService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
